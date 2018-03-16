@@ -5,6 +5,7 @@
 #include "CoreMinimal.h"
 #include "GameFramework/PlayerController.h"
 #include "Tank.h"
+#include "WorldCollision.h"
 #include "TankPlayerController.generated.h"
 
 /**
@@ -16,7 +17,10 @@ class BATTLETANK_API ATankPlayerController : public APlayerController
 	GENERATED_BODY()
 
 private:
-		
+	
+	UPROPERTY(EditAnywhere)
+		float LineTraceRange = 1000000.f;
+
 	ATank* GetControlledTank() const;
 
 	UPROPERTY(EditAnywhere)
@@ -34,4 +38,6 @@ private:
 	bool GetSightRayHitLocation(FVector& OutHitLocation) const;
 
 	bool GetLookDirection(FVector2D ScreenLocation, FVector& LookDirection) const;
+
+	bool GetLookVectorHitLocation(FVector LookDirection, FVector& HitLocation) const;
 };
