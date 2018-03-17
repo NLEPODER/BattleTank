@@ -25,5 +25,5 @@ private:
 	
 	ATank * GetPlayerTank() const;
 
-	void AimAtPlayer(AActor ControlledTank, AActor PlayerTank);
+	//void AimAtPlayer(AActor ControlledTank, AActor PlayerTank);
 };
